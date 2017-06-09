@@ -1,1 +1,28 @@
 <h1>This is a New Article</h1>
+
+<!--This is a form builder template. "form_for" is a helper method-->
+
+<!-- When you call form_for you have to pass an identifying symbol, i.e. :article to tell the method what the form is for
+
+f represents the FormBuilder object, used below to form 2 labels and 2 text fields, for the the title and text of an article
+
+f.submit is a call to submit of the f object which creates a submit button for the form
+
+form submissions usually are asscociate with the create action and should be pointed to that action 
+
+url: articles_path  is a helper method that points the form to the URI pattern with the articles prefix so the form can by deafult send a POST request to that route which is associated with the create action of the ArticlesController
+-->
+<%= form_for :article, url: articles_path do |f| %> 
+    <p>
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+    </p>
+
+    <p>
+        <%= f.label :text %><br>
+        <%= f.text_area :text %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>
