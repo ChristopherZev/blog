@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   get 'welcome/index'
     
   resources :articles #adds the article resource to the config/routes.rb.  Resource is the term used for a collection of similar objects, such as articles, people or animals. You can create, read, update and destroy items for a resource and these operations are referred to as CRUD operations.
